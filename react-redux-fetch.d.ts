@@ -48,12 +48,6 @@ declare module 'react-redux-fetch' {
   type FetchConfigType<TProps> = ((props: TProps, context: any) => FetchConfig[]) | FetchConfig[];
 
   export function connect(fetchItems: FetchConfigType<any>[]): RR.InferableComponentDecorator;
-
-  export function connect<TStateProps, TDispatchProps, TOwnProps>(
-    fetchItems: FetchConfigType<TStateProps & TDispatchProps & TOwnProps>,
-    mapStateToProps?: RR.FuncOrSelf<RR.MapStateToProps<TStateProps, TOwnProps>>,
-    mapDispatchToProps?: RR.FuncOrSelf<RR.MapDispatchToPropsFunction<TDispatchProps, TOwnProps> | RR.MapDispatchToPropsObject>,
-  ) : RR.ComponentDecorator<TStateProps & TDispatchProps, TOwnProps>;
   
   export default connect;
 }
